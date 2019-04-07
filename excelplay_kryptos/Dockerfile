@@ -1,5 +1,5 @@
 # FROM python:3.6
-FROM python:3.6
+FROM python:3.7
  ENV PYTHONUNBUFFERED 1
  RUN mkdir -p /excelplay/excelplay_kryptos
  WORKDIR /excelplay/excelplay_kryptos
@@ -7,3 +7,7 @@ FROM python:3.6
  RUN pip install -r requirements.txt
  RUN pip install git+git://github.com/traintraveler/redis-leaderboard.git
  ADD . /excelplay/excelplay_kryptos
+
+ENTRYPOINT ["python", "manage.py"]
+CMD ["runserver", "0.0.0.0:8880"]
+
