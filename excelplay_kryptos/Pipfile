@@ -18,6 +18,7 @@ django-cors-headers = "*"
 pipfile = "*"
 channels = "*"
 channels-redis = "*"
+awscli = "*"
 
 [dev-packages]
 django-filter = "==2.0.0"
@@ -32,4 +33,4 @@ Django = "==2.1.2"
 Markdown = "==3.0.1"
 
 [requires]
-python_version = "3.6"
+python_version = "3.5"
