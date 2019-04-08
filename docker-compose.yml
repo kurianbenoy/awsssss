@@ -1,0 +1,25 @@
+version: '3'
+services:
+  kryptos: 
+    build: . 
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    command: python /excelplay_kryptos/manage.py migrate --noinput
+    depends_on:
+      - db2
+
+  db2:
+    container_name: 'db2'
+    restart: always
+    image: postgres:alpine
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    volumes:
+      - 'dbdata:/var/lib/postgresql/data'
+
+volumes:
+  dbdata:
