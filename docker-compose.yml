@@ -1,12 +1,12 @@
 version: '3'
 services:
   kryptos: 
-    build: . 
+    build: ./excelplay_kryptos/. 
     expose:
       - "8000"
     ports:
       - "8000:8000"
-    command: python /excelplay_kryptos/manage.py migrate --noinput
+    command: python manage.py migrate --noinput
     depends_on:
       - db2
 
